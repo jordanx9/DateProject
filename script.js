@@ -1,9 +1,12 @@
 // Immediate function to check authorization
 (function() {
     if (window.location.pathname.includes('invitation.html')) {
-        // Check if user came from the auth page
-        if (!document.referrer.includes('index.html')) {
+        // Check if user came from the auth page or if they're already authenticated
+        if (!document.referrer.includes('index.html') && !sessionStorage.getItem('authenticated')) {
             window.location.href = 'index.html';
+        } else {
+            // Set authenticated flag
+            sessionStorage.setItem('authenticated', 'true');
         }
     }
 })();
