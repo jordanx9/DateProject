@@ -115,7 +115,7 @@ function submitGetToKnow() {
         .then(response => response.json())
         .then(data => {
             if (data.ok) {
-                alert(`Great! I'm excited to chat and get to know you better. I'll reach out to you at ${phoneNumber} soon to set up a time to talk.`);
+                alert(`Great! I'm excited to chat and get to know you better. I'll reach out to you at ${phoneNumber} soon!`);
             } else {
                 alert('There was an error submitting your information. Please try again.');
             }
