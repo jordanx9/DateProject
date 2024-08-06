@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome, Alyssa!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section" id="auth">
+            <h1>Hey Alyssa!</h1>
+            <p>The following question ensures that only you can access the page:</p>
+            <form id="authForm">
+                <label for="authQuestion">What is my Instagram username? (It should show when you look at my question on Instagram)</label>
+                <input type="text" id="authQuestion" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const answer = document.getElementById('authQuestion').value.toLowerCase();
+            if (answer === 'jordy.zn') { // Replace 'frio' with the correct answer
+                window.location.href = 'invitation.html';
+            } else {
+                alert('Sorry, that\'s not correct. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

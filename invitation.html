@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Invitation for Alyssa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="section" id="background">
+            <h2>Hey Alyssa, I have a confession to make.</h2>
+            <p>I first saw your profile on Tinder, and I was immediately intrigued. I wanted to reach out right away, but then I hesitated. What if you hadn't seen my profile? What if you had already swiped left? I didn't want to leave our potential connection to chance.</p>
+            <p>So, I decided to take a different approach. Instead of relying on the algorithms of a dating app, I wanted to create something more personal, more memorable. That's why I've created this website – a *cooler* way to introduce myself and hopefully catch your attention.</p>
+        </div>
+
+        <div class="section" id="about-me">
+            <h2>About Me</h2>
+            <ul>
+            <li>I am Jamaican. I lived there for majority of my life before moving to TX in 2014.</li>
+            <li>I enjoy quality time with my people so I am generally open for any activities that involve them!</li>
+            <li>For fitness, I alternate between Soccer, Boxing and the Gym 6 days per week.</li>
+            <li>As for profession, I am a Founder/Software Engineer, currently building a startup with my sister.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="invitation">
+            <h2>A Special Invitation</h2>
+            <p>Alyssa, I've gathered up the courage to ask you this in a rather unconventional way. Would you do me the honor of going on a date with me? I promise it'll be fun, and we can choose something we both enjoy. Or, if you prefer, we could start by getting to know each other better first. What do you say?</p>
+            <button class="btn" onclick="showDateOptions()">Yes, I'd love to go on a date!</button>
+            <button class="btn secondary" onclick="showGetToKnow()">I'd like to get to know you first</button>
+        </div>
+
+        <div class="section" id="dateOptions" style="display:none;">
+            <h2>What kind of date would you prefer?</h2>
+            <select id="dateType" onchange="showDatePicker()">
+                <option value="">Select an option</option>
+                <option value="outdoor">Outdoors</option>
+                <option value="dining">Dinner</option>
+                <option value="cultural">Sporting (ex. TopGolf, etc)</option>
+            </select>
+
+            <div id="datePicker" style="display:none;">
+                <h3>Great choice! When are you free?</h3>
+                <input type="date" id="dateInput" min="" onchange="enableTimeSelect()">
+                <select id="timeSelect" disabled onchange="showPhoneNumberInput()">
+                    <option value="">Select a time</option>
+                    <option value="lunch">Lunch (12:00 PM)</option>
+                    <option value="afternoon">Afternoon (3:00 PM)</option>
+                    <option value="dinner">Dinner (7:00 PM)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section" id="phoneNumber" style="display:none;">
+            <h2>Fantastic! Let's stay in touch</h2>
+            <p>Could you please share your phone number so we can coordinate?</p>
+            <input type="tel" id="phone" placeholder="Your phone number" required>
+            <button class="btn" onclick="submitPhoneNumber()">Submit</button>
+        </div>
+
+        <div class="section" id="getToKnow" style="display:none;">
+            <h2>I'm glad you want to get to know each other better!</h2>
+            <p>How about we start with a casual chat? Could you share your phone number, and I'll reach out to set up a time to talk?</p>
+            <input type="tel" id="getToKnowPhone" placeholder="Your phone number" required>
+            <button class="btn" onclick="submitGetToKnow()">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
